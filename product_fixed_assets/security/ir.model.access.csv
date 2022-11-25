@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_offices_fixed_assets,Bienes de Uso (Sucursales),model_offices,offices_group_user,1,1,1,1
+access_areas_fixed_assets,Bienes de Uso (Areas),model_areas,areas_group_user,1,1,1,1

@@ -1,0 +1,38 @@
+<odoo>
+  <data>
+    <!--MODELO PRODUCT TEMPLATE-->
+    <record model="ir.ui.view" id="exe_fixed_assets_product_form">
+      <field name="name">product.template.fixed.assets</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_form_view"/>
+      <field name="arch" type="xml">
+        
+        <div name="options" groups="base.group_user" position="inside">
+          <div>
+            <field name="is_fixed_assets"/>
+            <label for="is_fixed_assets"/>
+          </div>
+        </div>
+        <notebook position="inside">
+          <page name="fixed_assets" string="Bienes de Uso" attrs="{'invisible': [('is_fixed_assets', '=', False)]}">
+            <group name="group_fixed_assets">
+              <group>
+                <field name="period"/>
+                <field name="patrimonial_id"/>
+                <field name="invoice_id"/>
+                <field name="depositary_id" options="{'no_create': True}"/>
+                <field name="supplier_id" options="{'no_create': True}"/>
+                <field name="alta"/>
+                <field name="stock"/>
+                <field name="offices"/>
+                <field name="area"/>
+              </group>
+            </group>
+          </page>
+        </notebook>
+
+      </field>
+    </record>
+
+  </data>
+</odoo>

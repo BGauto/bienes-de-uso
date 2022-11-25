@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+      <!--Menú-->
+      <record id="exe_fixed_assets_offices" model="ir.actions.act_window">
+             <field name="name">Sucursales Bienes de Usos</field>
+             <field name="res_model">offices</field>
+             <field name="view_mode">tree,form</field>
+      </record>
+
+      <record id="exe_fixed_assets_areas" model="ir.actions.act_window">
+             <field name="name">Areas Bienes de Usos</field>
+             <field name="res_model">areas</field>
+             <field name="view_mode">tree,form</field>
+      </record>
+
+      <!--Menú  modelo sale-->
+      <menuitem name="Sucursales" id="offices_menu" parent="sale.prod_config_main" action="exe_fixed_assets_offices" />
+      <menuitem name="Áreas" id="areas_menu" parent="sale.prod_config_main" action="exe_fixed_assets_areas" />
+
+      <!--Menú modelo stock-->
+      <menuitem name="Sucursales" id="offices_menu" parent="stock.menu_product_in_config_stock" action="exe_fixed_assets_offices" />
+      <menuitem name="Áreas" id="areas_menu" parent="stock.menu_product_in_config_stock" action="exe_fixed_assets_areas" />
+
+      <!--Vista tree Areas y Sucursales-->
+      <record id="exe_areas_list" model="ir.ui.view">
+        <field name="name">areas.fixed.assets.list</field>
+        <field name="model">areas</field>
+        <field name="arch" type="xml">
+          <tree string="Áreas">
+            <field name="name"/>
+          </tree>
+        </field>
+      </record>
+
+      <record id="exe_offices_list" model="ir.ui.view">
+        <field name="name">offices.fixed.assets.list</field>
+        <field name="model">offices</field>
+        <field name="arch" type="xml">
+          <tree string="Sucursales">
+            <field name="name"/>
+          </tree>
+        </field>
+      </record>
+
+    </data>
+</odoo>
